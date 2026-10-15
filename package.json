@@ -1,0 +1,39 @@
+{
+  "name": "json-transformer-funcs-two-dimensions",
+  "version": "1.0.0",
+  "description": "Two-dimensional matrix grid mapper for json-transformer-funcs",
+  "main": "./src/index.js",
+  "module": "./src/index.js",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./src/index.js",
+      "default": "./src/index.js"
+    }
+  },
+  "files": [
+    "src",
+    "index.js",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keshavsoft/json-transformer-funcs-two-dimensions.git"
+  },
+  "keywords": [
+    "json-transformer-funcs",
+    "two-dimensions",
+    "matrix",
+    "grid",
+    "twoDimensional"
+  ],
+  "dependencies": {
+    "json-transformer-funcs-primitive": "^1.0.0"
+  },
+  "author": "KeshavSoft",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/keshavsoft/json-transformer-funcs-two-dimensions/issues"
+  },
+  "homepage": "https://github.com/keshavsoft/json-transformer-funcs-two-dimensions#readme"
+}
