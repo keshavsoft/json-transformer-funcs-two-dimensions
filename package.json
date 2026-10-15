@@ -1,6 +1,6 @@
 {
   "name": "json-transformer-funcs-two-dimensions",
-  "version": "1.4.1",
+  "version": "1.6.1",
   "description": "Two-dimensional matrix grid mapper for json-transformer-funcs",
   "main": "./src/index.js",
   "module": "./src/index.js",
@@ -27,7 +27,7 @@
     "twoDimensional"
   ],
   "dependencies": {
-    "json-transformer-funcs-primitive": "^1.0.0"
+    "json-transformer-funcs-primitive": "^1.6.1"
   },
   "author": "KeshavSoft",
   "license": "MIT",

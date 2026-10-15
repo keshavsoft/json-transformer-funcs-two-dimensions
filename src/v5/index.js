@@ -1,0 +1,35 @@
+import applyTemplate from "json-transformer-funcs-primitive";
+import addRowData from "./addRowData.js";
+import guardFunc from "./guard/index.js";
+
+const buildCells = (inRowColumns, inSpec) => {
+    return inRowColumns.map(column => {
+        const cellTemplateKey = column.template?.body?.cell || column.template?.bodyCell || "buildBodyCell";
+        const cellTemplate = inSpec[cellTemplateKey];
+
+        return applyTemplate(column, cellTemplate);
+    });
+};
+
+const startFunc = (inColumns, inData, inSpec) => {
+    guardFunc(inColumns, inData, inSpec);
+
+    const localColumns = inColumns;
+    const localData = inData;
+    const localSpec = inSpec;
+
+    const rowKey = localColumns[0]?.template?.body?.tr || "buildBodyTr";
+    const rowTemplate = localSpec[rowKey];
+
+    return localData.map(rowElement => {
+        const row = applyTemplate(rowElement, rowTemplate);
+        const rowColumns = addRowData(localColumns, rowElement);
+        const children = buildCells(rowColumns, localSpec);
+
+        row.children = children;
+        return row;
+    });
+};
+
+export default startFunc;
+export { buildCells };
