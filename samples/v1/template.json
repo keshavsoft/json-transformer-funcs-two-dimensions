@@ -1,0 +1,7 @@
+{
+    "tagName": "th",
+    "textContent": "${columnName}",
+    "attributes": {
+        "class": "py-3 px-3 fw-semibold text-uppercase small"
+    }
+}

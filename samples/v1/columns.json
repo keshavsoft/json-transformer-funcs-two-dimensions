@@ -1,0 +1,32 @@
+[
+    {
+        "columnName": "itemName",
+        "width": "300px",
+        "template": {
+            "body": {
+                "tr": "buildBodyTr",
+                "cell": "buildBodyCell"
+            }
+        }
+    },
+    {
+        "columnName": "baseUnit",
+        "width": "200px",
+        "template": {
+            "body": {
+                "tr": "buildBodyTr",
+                "cell": "buildBodyCell"
+            }
+        }
+    },
+    {
+        "columnName": "batches",
+        "width": "100px",
+        "template": {
+            "body": {
+                "tr": "buildBodyTr",
+                "cell": "buttonCell"
+            }
+        }
+    }
+]
