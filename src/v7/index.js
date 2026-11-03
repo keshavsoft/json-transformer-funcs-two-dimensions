@@ -2,11 +2,9 @@ import applyTemplate from "json-transformer-funcs-primitive";
 import addRowData from "./addRowData.js";
 import guardFunc from "./guard/index.js";
 
-const buildCells = (inRowColumns, inSpec) => {
+const buildCells = ({ inRowColumns, inSpec }) => {
     const createdArray = inRowColumns.map(column => {
-        const cellTemplateKey = column.template?.body?.cell || column.template?.bodyCell || "buildBodyCell";
-        const cellTemplate = inSpec[cellTemplateKey];
-
+        const cellTemplate = inSpec;
         const createdControl = applyTemplate(column, cellTemplate);
 
         return createdControl;
@@ -15,21 +13,20 @@ const buildCells = (inRowColumns, inSpec) => {
     return createdArray;
 };
 
-const startFunc = (inColumns, inData, inSpec) => {
-    guardFunc(inColumns, inData, inSpec);
+const startFunc = ({ columns, data, columnSpec, rowSpec }) => {
+    guardFunc(columns, data);
 
-    const localColumns = inColumns;
-    const localData = inData;
-    const localSpec = inSpec;
-
-    const rowKey = localColumns[0]?.template?.body?.tr || "buildBodyTr";
-    const rowTemplate = localSpec[rowKey];
+    const localColumns = columns;
+    const localData = data;
 
     const createdArray = localData.map(rowElement => {
-        const row = applyTemplate(rowElement, rowTemplate);
+        const row = applyTemplate(rowElement, rowSpec);
 
         const rowColumns = addRowData(localColumns, rowElement);
-        const children = buildCells(rowColumns, localSpec);
+        const children = buildCells({
+            inRowColumns: rowColumns,
+            inSpec: columnSpec
+        });
 
         row.children = children;
 

@@ -12,6 +12,12 @@ if (!specResponse.ok) {
 
 const spec = await specResponse.json();
 
-const output = transformer(columns, data, spec);
+// console.log("spec : ", spec);
+
+const output = transformer({
+    columns, data,
+    columnSpec: spec["buildBodyCell"],
+    rowSpec: spec["buildBodyTr"]
+});
 
 console.log("output : ", output);

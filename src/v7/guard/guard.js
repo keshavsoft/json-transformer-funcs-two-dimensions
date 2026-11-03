@@ -1,4 +1,4 @@
-const guardFunc = (inColumns, inData, inSpec) => {
+const guardFunc = (inColumns, inData) => {
     // 1. inColumns validation
     if (!Array.isArray(inColumns)) {
         throw new TypeError("inColumns must be an Array");
@@ -25,25 +25,7 @@ const guardFunc = (inColumns, inData, inSpec) => {
         if (!row || typeof row !== "object") {
             throw new TypeError(`inData[${i}] must be an object`);
         }
-    }
-
-    // 3. inSpec validation
-    if (!inSpec || typeof inSpec !== "object" || Array.isArray(inSpec)) {
-        throw new TypeError("inSpec must be an object");
-    }
-
-    const rowKey = inColumns[0]?.template?.body?.tr || "buildBodyTr";
-    if (!(rowKey in inSpec)) {
-        throw new Error(`Row template "${rowKey}" not found in inSpec`);
-    }
-
-    for (let i = 0; i < inColumns.length; i++) {
-        const col = inColumns[i];
-        const cellKey = col.template?.body?.cell || col.template?.bodyCell || "buildBodyCell";
-        if (!(cellKey in inSpec)) {
-            throw new Error(`Cell template "${cellKey}" for column "${col.columnName}" not found in inSpec`);
-        }
-    }
+    };
 
     return true;
 };
