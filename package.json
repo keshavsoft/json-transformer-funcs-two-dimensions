@@ -27,8 +27,8 @@
     "twoDimensional"
   ],
   "dependencies": {
-    "json-transformer-funcs-one-dimension": "^1.9.2",
-    "json-transformer-funcs-primitive": "^1.9.5"
+    "json-transformer-funcs-one-dimension": "^1.9.7",
+    "json-transformer-funcs-primitive": "^1.10.3"
   },
   "author": "KeshavSoft",
   "license": "MIT",

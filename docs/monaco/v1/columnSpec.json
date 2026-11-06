@@ -1,0 +1,7 @@
+{
+  "tagName": "td",
+  "textContent": "${rowValue}",
+  "attributes": {
+    "class": "py-3 px-3 text-secondary"
+  }
+}

@@ -1,0 +1,50 @@
+[
+  {
+    "event": "click",
+    "selector": "#renderBtn",
+    "action": "renderBase",
+    "narration": "Render the base table skeleton into the preview"
+  },
+  {
+    "event": "click",
+    "selector": "#buildBtn",
+    "action": "build",
+    "narration": "Run the two-dimensional transformer with columns, data, columnSpec, and rowSpec"
+  },
+  {
+    "event": "click",
+    "selector": "#tabBase",
+    "action": "showTabBase",
+    "narration": "Switch editor to tabBase"
+  },
+  {
+    "event": "click",
+    "selector": "#tabColumns",
+    "action": "showTabColumns",
+    "narration": "Switch editor to tabColumns"
+  },
+  {
+    "event": "click",
+    "selector": "#tabData",
+    "action": "showTabData",
+    "narration": "Switch editor to tabData"
+  },
+  {
+    "event": "click",
+    "selector": "#tabColumnSpec",
+    "action": "showTabColumnSpec",
+    "narration": "Switch editor to tabColumnSpec"
+  },
+  {
+    "event": "click",
+    "selector": "#tabRowSpec",
+    "action": "showTabRowSpec",
+    "narration": "Switch editor to tabRowSpec"
+  },
+  {
+    "event": "click",
+    "selector": "#tabOutput",
+    "action": "showTabOutput",
+    "narration": "Switch editor to tabOutput"
+  }
+]

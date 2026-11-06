@@ -1,0 +1,49 @@
+{
+  "tagName": "div",
+  "attributes": {
+    "class": "table-responsive",
+    "id": "tableStage"
+  },
+  "children": [
+    {
+      "tagName": "table",
+      "attributes": {
+        "class": "table table-striped table-hover align-middle"
+      },
+      "children": [
+        {
+          "tagName": "thead",
+          "attributes": {
+            "class": "table-light"
+          },
+          "children": [
+            {
+              "tagName": "tr",
+              "children": [
+                {
+                  "tagName": "th",
+                  "textContent": "Item"
+                },
+                {
+                  "tagName": "th",
+                  "textContent": "Base unit"
+                },
+                {
+                  "tagName": "th",
+                  "textContent": "Batches"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tagName": "tbody",
+          "attributes": {
+            "id": "tableBody"
+          },
+          "children": []
+        }
+      ]
+    }
+  ]
+}
