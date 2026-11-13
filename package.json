@@ -1,6 +1,6 @@
 {
   "name": "json-transformer-funcs-two-dimensions",
-  "version": "1.8.1",
+  "version": "1.8.2",
   "description": "Two-dimensional matrix grid mapper for json-transformer-funcs",
   "main": "./src/index.js",
   "module": "./src/index.js",
@@ -37,6 +37,6 @@
   },
   "homepage": "https://github.com/keshavsoft/json-transformer-funcs-two-dimensions#readme",
   "devDependencies": {
-    "spec-repo": "^1.5.1"
+    "spec-repo": "^1.6.1"
   }
 }
