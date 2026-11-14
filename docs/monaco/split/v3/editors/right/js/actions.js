@@ -1,5 +1,7 @@
 import config from './config.json' with { type: 'json' };
 
+let editorInstance = null;
+
 export const actions = {
   create: (monaco = window.monaco) => {
     const container = document.getElementById(config.containerId);
@@ -15,10 +17,28 @@ export const actions = {
       monaco.Uri.parse(config.modelUri)
     );
 
-    return monaco.editor.create(container, {
+    editorInstance = monaco.editor.create(container, {
       ...config,
       model
     });
+
+    return editorInstance;
+  },
+
+  loadFile: async (event) => {
+    const file = event.target.files?.[0];
+    if (!file) return;
+
+    try {
+      const text = await file.text();
+      if (editorInstance) {
+        editorInstance.setValue(text);
+        const footer = document.getElementById('footerInfoRight');
+        if (footer) footer.textContent = `File: ${file.name} (${file.size} bytes)`;
+      }
+    } catch (err) {
+      console.error('[Right Editor] File load failed:', err);
+    }
   }
 };
 

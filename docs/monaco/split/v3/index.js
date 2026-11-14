@@ -1,20 +1,17 @@
 import { initMonaco } from './editors/common/js/monacoLoader.js';
 import { initLeftEditor } from './editors/left/js/index.js';
 import { initRightEditor } from './editors/right/js/index.js';
-import { initFileSelector } from './topbar/js/fileSelector/index.js';
 
 async function boot() {
   try {
     const monaco = await initMonaco();
 
-    const leftEditor = initLeftEditor(monaco);
-    const rightEditor = initRightEditor(monaco);
+    const leftEditor = initLeftEditor(monaco, 'paneLeft');
+    const rightEditor = initRightEditor(monaco, 'paneRight');
 
-    initFileSelector('app', { editor: leftEditor });
-
-    console.info('[Monaco Split V2] Sibling feature-driven modules booted successfully.');
+    console.info('[Monaco Split V3] Both left and right editors booted with local JSON file selectors.');
   } catch (error) {
-    console.error('[Monaco Split V2 Error]', error);
+    console.error('[Monaco Split V3 Error]', error);
   }
 }
 
