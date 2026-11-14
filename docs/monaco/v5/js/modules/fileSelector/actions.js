@@ -1,13 +1,17 @@
+let targetEditor = null;
+
 export const actions = {
+  setEditor: (editor) => {
+    targetEditor = editor;
+  },
   loadFile: async (event) => {
     const file = event.target.files?.[0];
     if (!file) return;
 
     try {
       const text = await file.text();
-      const editor = window.monaco?.editor?.getEditors()?.[0];
-      if (editor) {
-        editor.setValue(text);
+      if (targetEditor) {
+        targetEditor.setValue(text);
 
         const footer = document.getElementById('footerInfo');
         if (footer) footer.textContent = `File: ${file.name} (${file.size} bytes)`;

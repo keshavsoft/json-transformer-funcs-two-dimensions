@@ -5,12 +5,12 @@ import { initFileSelector } from './modules/fileSelector/index.js';
 async function boot() {
   try {
     const monaco = await initMonaco();
-    initEditor(monaco);
-    initFileSelector('app');
+    const editor = initEditor(monaco);
+    initFileSelector('app', { editor });
 
-    console.info('[Monaco V4 Blueprint] Initialized successfully via window.ks.');
+    console.info('[Monaco V5 Blueprint] Initialized with decoupled editor reference.');
   } catch (error) {
-    console.error('[Monaco V4 Blueprint Error]', error);
+    console.error('[Monaco V5 Blueprint Error]', error);
   }
 }
 
