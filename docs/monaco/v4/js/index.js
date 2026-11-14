@@ -8,9 +8,9 @@ async function boot() {
     initEditor(monaco);
     initFileSelector('app');
 
-    console.info('[Monaco V3 Blueprint] Pure JSON-driven modules initialized.');
+    console.info('[Monaco V4 Blueprint] Initialized successfully via window.ks.');
   } catch (error) {
-    console.error('[Monaco V3 Blueprint Error]', error);
+    console.error('[Monaco V4 Blueprint Error]', error);
   }
 }
 

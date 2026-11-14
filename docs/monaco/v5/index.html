@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Monaco Single Editor Blueprint — V4</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.52.2/min/vs/editor/editor.main.min.css">
+</head>
+
+<body id="app">
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">‹›</span> Monaco IDE <span class="crumb">/ Single Editor Blueprint / V4</span>
+    </div>
+    <div class="toolbar">
+      <label class="file-label">
+        <span>Load File:</span>
+        <input type="file" id="filePicker" accept=".json,.txt,.js">
+      </label>
+      <span id="fileStatus" class="status active">Default loaded</span>
+    </div>
+  </header>
+
+  <main class="workspace">
+    <section class="pane">
+      <div class="pane-heading">
+        <div>
+          <span class="eyebrow">MONACO BLUEPRINT COMPONENT</span>
+          <h1 id="editorTitle">Single Monaco Editor</h1>
+        </div>
+        <span class="pane-tag">ID: monacoContainer</span>
+      </div>
+      <div id="monacoContainer" class="editor"></div>
+      <footer>
+        <span id="footerInfo">File: default.json</span>
+        <span>JSON</span>
+      </footer>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.52.2/min/vs/loader.min.js"></script>
+  <script type="module" src="https://keshavsoft.github.io/dom-primitive-bindings/dist/v8/min.js"></script>
+  <script type="module" src="https://keshavsoft.github.io/dom-primitive-engine/dist/v19/min.js"></script>
+
+  <script type="module" src="./js/index.js"></script>
+</body>
+
+</html>
