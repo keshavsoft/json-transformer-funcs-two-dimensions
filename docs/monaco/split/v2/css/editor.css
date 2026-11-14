@@ -1,0 +1,7 @@
+.editor {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  border-top: 1px solid #263449;
+  border-bottom: 1px solid #263449;
+}

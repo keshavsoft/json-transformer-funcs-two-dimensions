@@ -1,7 +1,7 @@
 import actions from './actions.js';
 
-export function initEditor(monaco) {
-  return actions.create(monaco);
+export function initEditor(monaco, overrides = {}) {
+  return actions.create(monaco, overrides);
 }
 
 export default initEditor;

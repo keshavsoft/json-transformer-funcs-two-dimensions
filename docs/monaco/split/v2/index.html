@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Monaco Split Editor Blueprint — V1</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.52.2/min/vs/editor/editor.main.min.css">
+</head>
+
+<body id="app">
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">‹›</span> Monaco IDE <span class="crumb">/ Split Editor Blueprint / V1</span>
+    </div>
+    <div class="toolbar">
+      <label class="file-label">
+        <span>Load File:</span>
+        <input type="file" id="filePicker" accept=".json,.txt,.js">
+      </label>
+      <span id="fileStatus" class="status active">Default loaded</span>
+    </div>
+  </header>
+
+  <main class="workspace">
+    <!-- Card 1: Left / Source -->
+    <section class="pane">
+      <div class="pane-heading">
+        <div>
+          <span class="eyebrow">SOURCE JSON</span>
+          <h1 id="editorTitleLeft">Input Editor</h1>
+        </div>
+        <span class="pane-tag">ID: monacoLeft</span>
+      </div>
+      <div id="monacoLeft" class="editor"></div>
+      <footer>
+        <span id="footerInfo">File: default.json</span>
+        <span>JSON</span>
+      </footer>
+    </section>
+
+    <!-- Card 2: Right / Target -->
+    <section class="pane">
+      <div class="pane-heading">
+        <div>
+          <span class="eyebrow">TRANSFORMED / OUTPUT</span>
+          <h1 id="editorTitleRight">Output Editor</h1>
+        </div>
+        <span class="pane-tag">ID: monacoRight</span>
+      </div>
+      <div id="monacoRight" class="editor"></div>
+      <footer>
+        <span id="footerInfoRight">File: output.json</span>
+        <span>JSON</span>
+      </footer>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.52.2/min/vs/loader.min.js"></script>
+  <script type="module" src="https://keshavsoft.github.io/dom-primitive-bindings/dist/v8/min.js"></script>
+  <script type="module" src="https://keshavsoft.github.io/dom-primitive-engine/dist/v19/min.js"></script>
+
+  <script type="module" src="./js/index.js"></script>
+</body>
+
+</html>
