@@ -1,0 +1,7 @@
+[
+  {
+    "id": "filePicker",
+    "event": "change",
+    "action": "loadFile"
+  }
+]
