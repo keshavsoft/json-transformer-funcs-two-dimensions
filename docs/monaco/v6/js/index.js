@@ -8,9 +8,9 @@ async function boot() {
     const editor = initEditor(monaco);
     initFileSelector('app', { editor });
 
-    console.info('[Monaco V5 Blueprint] Initialized with decoupled editor reference.');
+    console.info('[Monaco V6 Blueprint] Initialized with modular CSS and decoupled editor reference.');
   } catch (error) {
-    console.error('[Monaco V5 Blueprint Error]', error);
+    console.error('[Monaco V6 Blueprint Error]', error);
   }
 }
 
