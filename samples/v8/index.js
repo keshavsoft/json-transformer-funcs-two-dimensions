@@ -12,4 +12,4 @@ const output = transformer({
     rowSpec: spec["buildBodyTr"]
 });
 
-console.log("output : ", output[0].children);
+console.log("output : ", JSON.stringify(output, null, 2));

@@ -1,0 +1,11 @@
+{
+  "sequence": [
+    {
+      "action": "create",
+      "input": {
+        "monaco": "$monaco"
+      },
+      "output": "columnsEditor"
+    }
+  ]
+}

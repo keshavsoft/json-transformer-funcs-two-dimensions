@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Two-Dimensional Transformer — V2 Modular</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.52.2/min/vs/editor/editor.main.min.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">‹›</span> Monaco IDE <span class="crumb">/ Two-Dimensional Transformer / V2 · Modular</span>
+    </div>
+    <div class="toolbar">
+      <label style="display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:#94a3b8;">
+        Row Spec:
+        <select id="rowSpecSelect" style="background:#1e293b;color:#e2e8f0;border:1px solid #334155;border-radius:6px;padding:6px 10px;font-weight:600;font-size:12px;"></select>
+      </label>
+      <label style="display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:#94a3b8;">
+        Column Spec:
+        <select id="columnSpecSelect" style="background:#1e293b;color:#e2e8f0;border:1px solid #334155;border-radius:6px;padding:6px 10px;font-weight:600;font-size:12px;"></select>
+      </label>
+      <span id="intelligenceStatus" class="status inactive">Initializing...</span>
+      <button id="transformButton" class="primary" type="button">Transform 2D →</button>
+      <button id="resetButton" class="secondary" type="button">Reset</button>
+    </div>
+  </header>
+
+  <main class="workspace">
+    <!-- Editor 01: Columns -->
+    <section class="pane">
+      <div class="pane-heading">
+        <div>
+          <span class="eyebrow">SOURCE OF KNOWLEDGE</span>
+          <h1>Columns JSON</h1>
+        </div>
+        <span class="pane-tag">EDITOR 01</span>
+      </div>
+      <p class="description">Edit column definitions. These provide the columns axis for the 2D transformation.</p>
+      <div id="columnsEditor" class="editor"></div>
+      <footer>
+        <span>Column definitions</span>
+        <span>JSON</span>
+      </footer>
+    </section>
+
+    <!-- Editor 02: Data -->
+    <section class="pane">
+      <div class="pane-heading">
+        <div>
+          <span class="eyebrow">TARGET DATA</span>
+          <h1>Data JSON</h1>
+        </div>
+        <span class="pane-tag">EDITOR 02</span>
+      </div>
+      <p class="description">Edit row records. These provide the data values for the 2D transformation.</p>
+      <div id="dataEditor" class="editor"></div>
+      <footer>
+        <span id="message">Source row data</span>
+        <span>JSON</span>
+      </footer>
+    </section>
+
+    <!-- Editor 03: Output -->
+    <section class="pane">
+      <div class="pane-heading">
+        <div>
+          <span class="eyebrow">TWO-DIMENSIONAL RESULT</span>
+          <h1>Generated Output</h1>
+        </div>
+        <span class="pane-tag">EDITOR 03</span>
+      </div>
+      <p class="description">Generated 2D output structure produced from Columns + Data + Selected Specs.</p>
+      <div id="returnedEditor" class="editor"></div>
+      <footer>
+        <span id="outputStatus">Transformed 2D output</span>
+        <span>JSON</span>
+      </footer>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.52.2/min/vs/loader.min.js"></script>
+  <script type="module" src="./js/index.js"></script>
+</body>
+</html>

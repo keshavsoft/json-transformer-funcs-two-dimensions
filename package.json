@@ -15,6 +15,9 @@
     "src",
     "README.md"
   ],
+  "scripts": {
+    "build": "npx @keshavsoft/build-cli"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/keshavsoft/json-transformer-funcs-two-dimensions.git"

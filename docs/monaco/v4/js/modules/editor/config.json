@@ -1,0 +1,20 @@
+{
+  "containerId": "monacoContainer",
+  "theme": "vs-dark",
+  "language": "json",
+  "automaticLayout": true,
+  "minimap": {
+    "enabled": false
+  },
+  "fontSize": 14,
+  "lineNumbers": "on",
+  "tabSize": 2,
+  "scrollBeyondLastLine": false,
+  "formatOnPaste": true,
+  "formatOnType": true,
+  "initialValue": {
+    "title": "Monaco V3 Blueprint",
+    "status": "Ready",
+    "message": "Select a JSON file using the file picker above."
+  }
+}

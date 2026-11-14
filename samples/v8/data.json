@@ -11,5 +11,18 @@
         "openingRate": "1200.00/kgs"
       }
     ]
+  },
+  {
+    "itemName": "item 2",
+    "baseUnit": "kgs",
+    "batches": [
+      {
+        "godownName": "Main Location",
+        "batchName": "Navratan-Rs.1210/-",
+        "openingBalance": "-9.250 kgs",
+        "openingValue": 11100,
+        "openingRate": "1200.00/kgs"
+      }
+    ]
   }
 ]
