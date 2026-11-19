@@ -90,30 +90,28 @@ b((e, t) => {
 	let n = e;
 	return v(n, t), n.map((e) => _(e, e[t]));
 }, x);
-// src/v8/addRowData.js
-var S = (e, t) => e.map((e) => ({
-	...e,
-	rowData: t[e.columnName]
-})), C = (e, t) => {
-	if (!Array.isArray(e)) throw TypeError("inColumns must be an Array");
-	if (e.length === 0) throw Error("inColumns cannot be empty");
-	for (let t = 0; t < e.length; t++) {
-		let n = e[t];
-		if (!n || typeof n != "object") throw TypeError(`inColumns[${t}] must be an object`);
-		if (typeof n.columnName != "string" || !n.columnName.trim()) throw TypeError(`inColumns[${t}].columnName must be a non-empty string`);
-	}
-	if (!Array.isArray(t)) throw TypeError("inData must be an Array");
-	for (let e = 0; e < t.length; e++) {
-		let n = t[e];
-		if (!n || typeof n != "object") throw TypeError(`inData[${e}] must be an object`);
-	}
-	return !0;
-}, w = ({ columns: e, data: t, columnSpec: n, rowSpec: r }) => {
-	C(e, t);
-	let i = e;
-	return t.map((e) => {
-		let t = c(e, r);
-		return t.children = x(S(i, e), n), t;
+// src/v9/index.js
+var S = ({ outer: e = [], outerSpec: t, getInner: n, innerSpec: r } = {}) => e.map((e) => {
+	let i = c(e, t), a = n ? n(e) : [];
+	return i.children = a.length > 0 ? x(a, r) : [], i;
+}), C = ({ columns: e = [], data: t = [], columnSpec: n, rowSpec: r } = {}) => S({
+	outer: Array.isArray(t) ? t : t?.data ?? t?.rows ?? [],
+	outerSpec: r,
+	innerSpec: n,
+	getInner: (t) => e.map((e) => ({
+		...e,
+		rowValue: t[e.columnName]
+	}))
+}), w = ({ columns: e = [], data: t = [], rows: n, columnSpec: r, rowSpec: i } = {}) => {
+	let a = n ?? (Array.isArray(t) ? t : t?.data ?? t?.rows ?? []);
+	return S({
+		outer: e,
+		outerSpec: r,
+		innerSpec: i,
+		getInner: (e) => Array.isArray(e.options) && e.options.length > 0 ? e.options.map((e) => typeof e == "object" ? e : { rowValue: e }) : a.map((t) => ({
+			...t,
+			rowValue: t[e.columnName] ?? t.value ?? t
+		}))
 	});
-};
-export { w as default };
+}, T = (e = {}) => e.type === "columnOnRow" || e.mode === "columnOnRow" ? w(e) : e.outer && e.outerSpec ? S(e) : C(e);
+export { w as columnOnRow, T as default, C as rowOnColumn, S as twoDimensional };
