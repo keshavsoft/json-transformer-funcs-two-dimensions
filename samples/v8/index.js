@@ -1,12 +1,12 @@
-import transformer from "../../src/index.js";
-import { spec } from "spec-repo";
+import { rowOnColumn } from "../../src/index.js";
+import spec from "declarative-spec";
 
 import columns from "./columns.json" with { type: "json" };
 import data from "./data.json" with { type: "json" };
 
 // console.log("spec : ", spec);
 
-const output = transformer({
+const output = rowOnColumn({
     columns, data,
     columnSpec: spec["buildBodyCell"],
     rowSpec: spec["buildBodyTr"]
